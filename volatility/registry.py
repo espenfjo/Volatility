@@ -44,6 +44,8 @@ import volatility.debug as debug
 import volatility.conf as conf
 config = conf.ConfObject()
 
+import pdb
+
 config.add_option("INFO", default = None, action = "store_true",
                   cache_invalidator = False,
                   help = "Print information about all registered objects")
@@ -95,6 +97,7 @@ class ModuleRegistry(object):
             results = []
             for module_name, module_path in modules:
                 try:
+                    pdb.set_trace()
                     ## Temporarily load this module into a temporary
                     ## name. It will be moved later to its desired
                     ## namespace
